@@ -11,8 +11,6 @@ namespace Deployer;
 use Deployer\Exception\RuntimeException;
 
 set('docker_default_command_template', '{{bin/docker}} exec -i {{container}} bash -c {{?command}}');
-set('container_prefix', '{{project_prefix}}{{release_name}}');
-set('docker_compose', '{{bin/docker-compose}} --project-name {{container_prefix}}');
 
 function runTaskInDocker($task, $containers, $additionalConfiguration = [])
 {
